@@ -12,8 +12,8 @@ launch.json
 # Symbol files
 *.flf
 
-# VS Code settings (uncomment if you want to ignore local settings)
-# .vscode/
+# VS Code settings
+.vscode/
 
 # macOS
 .DS_Store

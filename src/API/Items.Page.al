@@ -10,9 +10,9 @@ page 50000 "Items PTE"
     EntityName = 'item';
     EntitySetName = 'items';
     SourceTable = Item;
+    ODataKeyFields = SystemId; // Mandatory!
     DelayedInsert = true;
     Editable = false;
-    ODataKeyFields = SystemId; // Mandatory!
     DataAccessIntent = ReadOnly;
 
     layout

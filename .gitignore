@@ -1,0 +1,35 @@
+# AL/Business Central specific files
+*.app
+.alpackages/
+.alcache/
+.netpackages/
+rad.json
+launch.json
+
+# Generated translation files
+*.g.xlf
+
+# Symbol files
+*.flf
+
+# VS Code settings (uncomment if you want to ignore local settings)
+# .vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+~$*

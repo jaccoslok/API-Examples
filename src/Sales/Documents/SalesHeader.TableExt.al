@@ -1,3 +1,6 @@
+namespace bcportal.api;
+using Microsoft.Sales.Document;
+
 tableextension 58702 "Sales Header PTE" extends "Sales Header"
 {
     fields

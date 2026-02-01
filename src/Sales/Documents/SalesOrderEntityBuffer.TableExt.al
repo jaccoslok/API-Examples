@@ -1,3 +1,6 @@
+namespace bcportal.api;
+using Microsoft.Integration.Entity;
+
 tableextension 58701 "Sales Order Entity Buffer PTE" extends "Sales Order Entity Buffer"
 {
     fields

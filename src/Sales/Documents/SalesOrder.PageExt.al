@@ -1,3 +1,6 @@
+namespace bcportal.api;
+using Microsoft.Sales.Document;
+
 pageextension 58700 "Sales Order PTE" extends "Sales Order"
 {
     layout

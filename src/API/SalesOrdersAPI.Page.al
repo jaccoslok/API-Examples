@@ -18,7 +18,7 @@ page 58701 "Sales Orders API PTE"
 {
     PageType = API;
     APIPublisher = 'slokSoftware';
-    APIGroup = 'BcPortal';
+    APIGroup = 'bcPortal';
     APIVersion = 'v2.0';
     EntityCaption = 'Sales Order';
     EntitySetCaption = 'Sales Orders';

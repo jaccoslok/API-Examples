@@ -5,7 +5,7 @@ page 58700 "Items API PTE"
 {
     PageType = API;
     APIPublisher = 'slokSoftware';
-    APIGroup = 'BcPortal';
+    APIGroup = 'bcPortal';
     APIVersion = 'v2.0';
     EntityName = 'item';
     EntitySetName = 'items';

@@ -14,7 +14,7 @@ using Microsoft.Sales.Posting;
 using Microsoft.Utilities;
 using System.Reflection;
 
-page 58701 "Sales Orders PTE"
+page 58701 "Sales Orders API PTE"
 {
     PageType = API;
     APIPublisher = 'slokSoftware';

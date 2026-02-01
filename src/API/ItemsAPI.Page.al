@@ -1,7 +1,7 @@
 namespace bcportal.api;
 using Microsoft.Inventory.Item;
 
-page 58700 "Items PTE"
+page 58700 "Items API PTE"
 {
     PageType = API;
     APIPublisher = 'slokSoftware';

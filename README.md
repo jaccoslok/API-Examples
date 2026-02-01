@@ -91,8 +91,8 @@ Authorization: Bearer {your-token}
 ├── app.json                         # Extension manifest
 ├── src/
 │   ├── API/
-│   │   ├── Items.Page.al            # Items API page
-│   │   └── SalesOrders.Page.al      # Sales Orders API page
+│   │   ├── ItemsAPI.Page.al         # Items API page
+│   │   └── SalesOrdersAPI.Page.al   # Sales Orders API page
 │   └── Sales/
 │       └── Documents/
 │           ├── SalesHeader.TableExt.al              # Sales Header table extension

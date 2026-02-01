@@ -1,6 +1,8 @@
 # API Examples for Business Central
 
-A Business Central AL example extension that provides guidance on how to implement custom API pages for use with BCPortal.Cloud. If you wish to use this extension please make sure to generate a **new** GUID for the App ID.
+A Business Central AL example extension that provides guidance on implementing custom API pages for use with BCPortal.Cloud.
+
+**Important:** If you wish to use this extension, please ensure that you generate a **new** GUID for the App ID and provide your own App and Publisher name in the app.json file.
 
 ## Overview
 
@@ -18,6 +20,14 @@ This extension demonstrates how to create custom API pages for BCPortal.Cloud in
     - Inventory levels
     - Sales Unit of Measure
 
+- **Sales Orders API**: Exposes Sales Order data through a custom API endpoint
+  - Endpoint: `/api/slokSoftware/bcPortal/v2.0/salesOrders`
+  - This example includes a custom text field "My Custom Field"
+  - Full CRUD operations for sales order management
+  - Includes customer details, billing and shipping addresses
+  - Order status, delivery dates, and financial totals
+  - Enables integration of custom fields with BCPortal.Cloud
+
 ## Requirements
 
 - Business Central version 27.0 or higher
@@ -25,9 +35,12 @@ This extension demonstrates how to create custom API pages for BCPortal.Cloud in
 
 ## Installation
 
-1. Download the latest `.app` file from the releases
-2. Install the extension in your Business Central environment using the Extension Management page
-3. The API endpoints will be automatically available
+This is **an example application** and is not intended for production environments. We strongly recommend working with your Business Central partner to implement the desired customizations. Please note that we do not provide customization services.
+
+1. Check the no. series used in this app with your Business Central partner so this app cannot collide with other customizations
+2. Build your `.app` file in VS Code
+3. Install the extension in your Business Central environment using the Extension Management page
+4. The API endpoints will be automatically available
 
 ## API Usage
 
@@ -75,11 +88,17 @@ Authorization: Bearer {your-token}
 
 ```
 .
-├── app.json                          # Extension manifest
+├── app.json                         # Extension manifest
 ├── src/
-│   └── API/
-│       └── Items.Page.al            # Items API page
-└── README.md
+│   ├── API/
+│   │   ├── Items.Page.al            # Items API page
+│   │   └── SalesOrders.Page.al      # Sales Orders API page
+│   └── Sales/
+│       └── Documents/
+│           ├── SalesHeader.TableExt.al              # Sales Header table extension
+│           ├── SalesOrder.PageExt.al                # Sales Order page extension
+│           └── SalesOrderEntityBuffer.TableExt.al   # Sales Order Entity Buffer table extension
+└── README.md                        # This file
 ```
 
 ### Building the Extension

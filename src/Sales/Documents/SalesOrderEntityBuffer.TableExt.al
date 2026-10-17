@@ -10,5 +10,10 @@ tableextension 58701 "Sales Order Entity Buffer PTE" extends "Sales Order Entity
             Caption = 'My Custom Field';
             DataClassification = CustomerContent;
         }
+        field(58751; "Blanket Order No. PTE"; Code[20])
+        {
+            Caption = 'Blanket Order No.';
+            DataClassification = CustomerContent;
+        }
     }
 }

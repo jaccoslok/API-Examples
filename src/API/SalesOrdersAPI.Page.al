@@ -1,4 +1,4 @@
-//Copied from Page 30028 "APIV2 - Sales Orders" from version 27.0 and added a custom field
+//Copied from Page 30028 "APIV2 - Sales Orders" from version 27.0 and added a custom field, captions removed
 namespace bcportal.api;
 
 using Microsoft.API.V2;
@@ -20,8 +20,6 @@ page 58701 "Sales Orders API PTE"
     APIPublisher = 'slokSoftware';
     APIGroup = 'bcPortal';
     APIVersion = 'v2.0';
-    EntityCaption = 'Sales Order';
-    EntitySetCaption = 'Sales Orders';
     ChangeTrackingAllowed = true;
     DelayedInsert = true;
     EntityName = 'salesOrder';
@@ -39,7 +37,6 @@ page 58701 "Sales Orders API PTE"
             {
                 field(id; Rec.Id)
                 {
-                    Caption = 'Id';
                     Editable = false;
 
                     trigger OnValidate()
@@ -49,7 +46,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(number; Rec."No.")
                 {
-                    Caption = 'No.';
                     Editable = false;
 
                     trigger OnValidate()
@@ -59,7 +55,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(externalDocumentNumber; Rec."External Document No.")
                 {
-                    Caption = 'External Document No.';
 
                     trigger OnValidate()
                     begin
@@ -68,7 +63,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(orderDate; Rec."Document Date")
                 {
-                    Caption = 'Order Date';
 
                     trigger OnValidate()
                     begin
@@ -80,7 +74,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(postingDate; Rec."Posting Date")
                 {
-                    Caption = 'Posting Date';
 
                     trigger OnValidate()
                     begin
@@ -92,7 +85,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(customerId; Rec."Customer Id")
                 {
-                    Caption = 'Customer Id';
 
                     trigger OnValidate()
                     begin
@@ -107,7 +99,6 @@ page 58701 "Sales Orders API PTE"
 
                 field(customerNumber; Rec."Sell-to Customer No.")
                 {
-                    Caption = 'Customer No.';
 
                     trigger OnValidate()
                     begin
@@ -127,17 +118,14 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(customerName; Rec."Sell-to Customer Name")
                 {
-                    Caption = 'Customer Name';
                     Editable = false;
                 }
                 field(billToName; Rec."Bill-to Name")
                 {
-                    Caption = 'Bill-to Name';
                     Editable = false;
                 }
                 field(billToCustomerId; Rec."Bill-to Customer Id")
                 {
-                    Caption = 'Bill-to Customer Id';
 
                     trigger OnValidate()
                     begin
@@ -151,7 +139,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(billToCustomerNumber; Rec."Bill-to Customer No.")
                 {
-                    Caption = 'Bill-to Customer No.';
 
                     trigger OnValidate()
                     begin
@@ -171,7 +158,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shipToName; Rec."Ship-to Name")
                 {
-                    Caption = 'Ship-to Name';
 
                     trigger OnValidate()
                     begin
@@ -184,7 +170,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shipToContact; Rec."Ship-to Contact")
                 {
-                    Caption = 'Ship-to Contact';
 
                     trigger OnValidate()
                     begin
@@ -197,7 +182,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(sellToAddressLine1; Rec."Sell-to Address")
                 {
-                    Caption = 'Sell-to Address Line 1';
 
                     trigger OnValidate()
                     begin
@@ -206,7 +190,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(sellToAddressLine2; Rec."Sell-to Address 2")
                 {
-                    Caption = 'Sell-to Address Line 2';
 
                     trigger OnValidate()
                     begin
@@ -215,7 +198,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(sellToCity; Rec."Sell-to City")
                 {
-                    Caption = 'Sell-to City';
 
                     trigger OnValidate()
                     begin
@@ -224,7 +206,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(sellToCountry; Rec."Sell-to Country/Region Code")
                 {
-                    Caption = 'Sell-to Country/Region Code';
 
                     trigger OnValidate()
                     begin
@@ -233,7 +214,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(sellToState; Rec."Sell-to County")
                 {
-                    Caption = 'Sell-to State';
 
                     trigger OnValidate()
                     begin
@@ -242,7 +222,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(sellToPostCode; Rec."Sell-to Post Code")
                 {
-                    Caption = 'Sell-to Post Code';
 
                     trigger OnValidate()
                     begin
@@ -251,37 +230,30 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(billToAddressLine1; Rec."Bill-to Address")
                 {
-                    Caption = 'Bill-to Address Line 1';
                     Editable = false;
                 }
                 field(billToAddressLine2; Rec."Bill-to Address 2")
                 {
-                    Caption = 'Bill-to Address Line 2';
                     Editable = false;
                 }
                 field(billToCity; Rec."Bill-to City")
                 {
-                    Caption = 'Bill-to City';
                     Editable = false;
                 }
                 field(billToCountry; Rec."Bill-to Country/Region Code")
                 {
-                    Caption = 'Bill-to Country/Region Code';
                     Editable = false;
                 }
                 field(billToState; Rec."Bill-to County")
                 {
-                    Caption = 'BillTo State';
                     Editable = false;
                 }
                 field(billToPostCode; Rec."Bill-to Post Code")
                 {
-                    Caption = 'Bill-to Post Code';
                     Editable = false;
                 }
                 field(shipToAddressLine1; Rec."Ship-to Address")
                 {
-                    Caption = 'Ship-to Address Line 1';
 
                     trigger OnValidate()
                     begin
@@ -292,7 +264,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shipToAddressLine2; Rec."Ship-to Address 2")
                 {
-                    Caption = 'Ship-to Address Line 2';
 
                     trigger OnValidate()
                     begin
@@ -303,7 +274,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shipToCity; Rec."Ship-to City")
                 {
-                    Caption = 'Ship-to City';
 
                     trigger OnValidate()
                     begin
@@ -314,7 +284,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shipToCountry; Rec."Ship-to Country/Region Code")
                 {
-                    Caption = 'Ship-to Country/Region Code';
 
                     trigger OnValidate()
                     begin
@@ -325,7 +294,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shipToState; Rec."Ship-to County")
                 {
-                    Caption = 'Ship-to State';
 
                     trigger OnValidate()
                     begin
@@ -336,7 +304,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shipToPostCode; Rec."Ship-to Post Code")
                 {
-                    Caption = 'Ship-to Post Code';
 
                     trigger OnValidate()
                     begin
@@ -347,7 +314,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shortcutDimension1Code; Rec."Shortcut Dimension 1 Code")
                 {
-                    Caption = 'Shortcut Dimension 1 Code';
 
                     trigger OnValidate()
                     begin
@@ -356,7 +322,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shortcutDimension2Code; Rec."Shortcut Dimension 2 Code")
                 {
-                    Caption = 'Shortcut Dimension 2 Code';
 
                     trigger OnValidate()
                     begin
@@ -365,7 +330,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(currencyId; Rec."Currency Id")
                 {
-                    Caption = 'Currency Id';
 
                     trigger OnValidate()
                     begin
@@ -384,7 +348,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(currencyCode; CurrencyCodeTxt)
                 {
-                    Caption = 'Currency Code';
 
                     trigger OnValidate()
                     begin
@@ -413,7 +376,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(pricesIncludeTax; Rec."Prices Including VAT")
                 {
-                    Caption = 'Prices Include Tax';
 
                     trigger OnValidate()
                     var
@@ -431,7 +393,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(paymentTermsId; Rec."Payment Terms Id")
                 {
-                    Caption = 'Payment Terms Id';
 
                     trigger OnValidate()
                     begin
@@ -450,7 +411,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(shipmentMethodId; Rec."Shipment Method Id")
                 {
-                    Caption = 'Shipment Method Id';
 
                     trigger OnValidate()
                     begin
@@ -469,7 +429,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(salesperson; Rec."Salesperson Code")
                 {
-                    Caption = 'Salesperson';
 
                     trigger OnValidate()
                     begin
@@ -478,7 +437,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(partialShipping; PartialOrderShipping)
                 {
-                    Caption = 'Partial Shipping';
 
                     trigger OnValidate()
                     begin
@@ -487,7 +445,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(requestedDeliveryDate; Rec."Requested Delivery Date")
                 {
-                    Caption = 'Requested Delivery Date';
 
                     trigger OnValidate()
                     begin
@@ -496,21 +453,18 @@ page 58701 "Sales Orders API PTE"
                 }
                 part(dimensionSetLines; "APIV2 - Dimension Set Lines")
                 {
-                    Caption = 'Dimension Set Lines';
                     EntityName = 'dimensionSetLine';
                     EntitySetName = 'dimensionSetLines';
                     SubPageLink = "Parent Id" = field(Id), "Parent Type" = const("Sales Order");
                 }
-                part(salesOrderLines; "APIV2 - Sales Order Lines")
+                part(salesOrderLines; "Sales Order Lines API PTE")
                 {
-                    Caption = 'Lines';
-                    EntityName = 'salesOrderLine';
-                    EntitySetName = 'salesOrderLines';
+                    EntityName = 'mySalesOrderLine';
+                    EntitySetName = 'mySalesOrderLines';
                     SubPageLink = "Document Id" = field(Id);
                 }
                 part(pdfDocument; "APIV2 - PDF Document")
                 {
-                    Caption = 'PDF Document';
                     Multiplicity = ZeroOrOne;
                     EntityName = 'pdfDocument';
                     EntitySetName = 'pdfDocument';
@@ -518,7 +472,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(discountAmount; Rec."Invoice Discount Amount")
                 {
-                    Caption = 'Discount Amount';
 
                     trigger OnValidate()
                     begin
@@ -529,17 +482,14 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(discountAppliedBeforeTax; Rec."Discount Applied Before Tax")
                 {
-                    Caption = 'Discount Applied Before Tax';
                     Editable = false;
                 }
                 field(totalAmountExcludingTax; Rec.Amount)
                 {
-                    Caption = 'Total Amount Excluding Tax';
                     Editable = false;
                 }
                 field(totalTaxAmount; Rec."Total Tax Amount")
                 {
-                    Caption = 'Total Tax Amount';
                     Editable = false;
 
                     trigger OnValidate()
@@ -549,7 +499,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(totalAmountIncludingTax; Rec."Amount Including VAT")
                 {
-                    Caption = 'Total Amount Including Tax';
                     Editable = false;
 
                     trigger OnValidate()
@@ -559,7 +508,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(fullyShipped; Rec."Completely Shipped")
                 {
-                    Caption = 'Fully Shipped';
 
                     trigger OnValidate()
                     begin
@@ -568,17 +516,14 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(status; Rec.Status)
                 {
-                    Caption = 'Status';
                     Editable = false;
                 }
                 field(lastModifiedDateTime; Rec.SystemModifiedAt)
                 {
-                    Caption = 'Last Modified Date';
                     Editable = false;
                 }
                 field(phoneNumber; Rec."Sell-to Phone No.")
                 {
-                    Caption = 'Phone No.';
 
                     trigger OnValidate()
                     begin
@@ -587,7 +532,6 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(email; Rec."Sell-to E-Mail")
                 {
-                    Caption = 'Email';
 
                     trigger OnValidate()
                     begin
@@ -596,23 +540,28 @@ page 58701 "Sales Orders API PTE"
                 }
                 field(myCustomField; Rec."My Custom Field PTE")
                 {
-                    Caption = 'My Custom Field';
 
                     trigger OnValidate()
                     begin
                         RegisterFieldSet(Rec.FieldNo("My Custom Field PTE"));
                     end;
                 }
+                field(blanketOrderNumber; Rec."Blanket Order No. PTE")
+                {
+
+                    trigger OnValidate()
+                    begin
+                        RegisterFieldSet(Rec.FieldNo("Blanket Order No. PTE"));
+                    end;
+                }
                 part(attachments; "APIV2 - Attachments")
                 {
-                    Caption = 'Attachments';
                     EntityName = 'attachment';
                     EntitySetName = 'attachments';
                     SubPageLink = "Document Id" = field(Id), "Document Type" = const("Sales Order");
                 }
                 part(documentAttachments; "APIV2 - Document Attachments")
                 {
-                    Caption = 'Document Attachments';
                     EntityName = 'documentAttachment';
                     EntitySetName = 'documentAttachments';
                     SubPageLink = "Document Id" = field(Id), "Document Type" = const("Sales Order");

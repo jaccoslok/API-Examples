@@ -1,6 +1,7 @@
 namespace bcportal.api;
 
 using Microsoft.Sales.Document;
+using Microsoft.Integration.Entity;
 
 page 58702 "Blanket Sales Orders API PTE"
 {
@@ -69,18 +70,24 @@ page 58702 "Blanket Sales Orders API PTE"
     }
 
     [ServiceEnabled]
+    [Caption('Creates a Sales Order for lines with a Quantity to Ship')]
     [Scope('Cloud')]
     procedure CreateSalesOrder(var ActionContext: WebServiceActionContext)
     var
-        BlanketSalesOrderToOrder: Codeunit "Blnkt Sales Ord. to Ord. (Y/N)";
+        BlanketSalesOrderToOrder: Codeunit "Blanket Sales Order to Order";
+        SalesOrderHeader: Record "Sales Header";
+        SalesOrderEntityBuffer: Record "Sales Order Entity Buffer";
     begin
+        BlanketSalesOrderToOrder.SetHideValidationDialog(true);
         if not BlanketSalesOrderToOrder.Run(Rec) then
             Error(BlanketSalesOrderConversionFailedErr);
 
+        BlanketSalesOrderToOrder.GetSalesOrderHeader(SalesOrderHeader);
+
         ActionContext.SetObjectType(ObjectType::Page);
-        ActionContext.SetObjectId(Page::"Blanket Sales Orders API PTE");
-        ActionContext.AddEntityKey(Rec.FieldNo(SystemId), Rec.SystemId);
-        ActionContext.SetResultCode(WebServiceActionResultCode::Updated);
+        ActionContext.SetObjectId(Page::"Sales Orders API PTE");
+        ActionContext.AddEntityKey(SalesOrderEntityBuffer.FieldNo(Id), SalesOrderHeader.SystemId);
+        ActionContext.SetResultCode(WebServiceActionResultCode::Created);
     end;
 
     var

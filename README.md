@@ -99,7 +99,7 @@ Returns blanket sales orders with customer and shipping addresses, currency, tot
 
 Blanket order lines expose the unit of measure and conversion factor, quantities in document and base units, remaining and outstanding quantities, shipped and invoiced quantities, and quantities to ship or invoice. The `shipQuantity` and `shipQuantityBase` fields are editable; all other line fields are read-only. Line creation is disabled.
 
-The bound `CreateSalesOrder` action converts the selected blanket sales order using Business Central's standard conversion codeunit. Blanket order API support is available only on request and requires additional implementation and support from Slok Software and your Business Central partner.
+The bound `createSalesOrder` action converts the selected blanket sales order using Business Central's standard conversion codeunit and identifies the created sales order in the action response. Read the new order's `number` from that sales order entity. Blanket order API support is available only on request and requires additional implementation and support from Slok Software and your Business Central partner.
 
 ### Example Request
 

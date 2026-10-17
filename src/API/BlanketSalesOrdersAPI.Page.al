@@ -59,6 +59,12 @@ page 58702 "Blanket Sales Orders API PTE"
                 field(amount; Rec.Amount) { }
                 field(amountIncludingVat; Rec."Amount Including VAT") { }
                 field(status; Rec.Status) { }
+                field(totalQuantity; TotalQuantity) { }
+                field(totalOutstandingQuantity; TotalOutstandingQuantity) { }
+                field(totalShippedQuantity; TotalShippedQuantity) { }
+                field(totalInvoicedQuantity; TotalInvoicedQuantity) { }
+                field(totalQuantityToShip; TotalQuantityToShip) { }
+                field(totalLineDiscountAmount; TotalLineDiscountAmount) { }
                 part(blanketSalesOrderLines; "Blanket SO Lines API PTE")
                 {
                     EntityName = 'blanketSalesOrderLine';
@@ -68,6 +74,21 @@ page 58702 "Blanket Sales Orders API PTE"
             }
         }
     }
+
+    trigger OnAfterGetRecord()
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        SalesLine.SetRange("Document Type", Rec."Document Type");
+        SalesLine.SetRange("Document No.", Rec."No.");
+        SalesLine.CalcSums(Quantity, "Outstanding Quantity", "Quantity Shipped", "Quantity Invoiced", "Qty. to Ship", "Line Discount Amount");
+        TotalQuantity := SalesLine.Quantity;
+        TotalOutstandingQuantity := SalesLine."Outstanding Quantity";
+        TotalShippedQuantity := SalesLine."Quantity Shipped";
+        TotalInvoicedQuantity := SalesLine."Quantity Invoiced";
+        TotalQuantityToShip := SalesLine."Qty. to Ship";
+        TotalLineDiscountAmount := SalesLine."Line Discount Amount";
+    end;
 
     [ServiceEnabled]
     [Caption('Creates a Sales Order for lines with a Quantity to Ship')]
@@ -91,5 +112,11 @@ page 58702 "Blanket Sales Orders API PTE"
     end;
 
     var
+        TotalQuantity: Decimal;
+        TotalOutstandingQuantity: Decimal;
+        TotalShippedQuantity: Decimal;
+        TotalInvoicedQuantity: Decimal;
+        TotalQuantityToShip: Decimal;
+        TotalLineDiscountAmount: Decimal;
         BlanketSalesOrderConversionFailedErr: Label 'The blanket sales order could not be converted to a sales order.';
 }

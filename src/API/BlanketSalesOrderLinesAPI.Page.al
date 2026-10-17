@@ -26,10 +26,12 @@ page 58709 "Blanket SO Lines API PTE"
             repeater(Group)
             {
                 field(id; Rec.SystemId) { Editable = false; } //Mandatory!
+                field(documentId; DocumentId) { Editable = false; }
                 field(documentNumber; Rec."Document No.") { Editable = false; }
                 field(sequence; Rec."Line No.") { Editable = false; }
                 field(lineType; Rec.Type) { Editable = false; }
                 field(lineObjectNumber; Rec."No.") { Editable = false; }
+                field(variantCode; Rec."Variant Code") { Editable = false; }
                 field(description; Rec.Description) { Editable = false; }
                 field(description2; Rec."Description 2") { Editable = false; }
                 field(unitOfMeasureCode; Rec."Unit of Measure Code") { Editable = false; }
@@ -70,7 +72,13 @@ page 58709 "Blanket SO Lines API PTE"
     trigger OnAfterGetRecord()
     var
         SalesOrderLine: Record "Sales Line";
+        SalesHeader: Record "Sales Header";
     begin
+        if SalesHeader.Get(Rec."Document Type", Rec."Document No.") then
+            DocumentId := SalesHeader.SystemId
+        else
+            Clear(DocumentId);
+
         SalesOrderLine.SetRange("Document Type", SalesOrderLine."Document Type"::Order);
         SalesOrderLine.SetRange("Blanket Order No.", Rec."Document No.");
         SalesOrderLine.SetRange("Blanket Order Line No.", Rec."Line No.");
@@ -81,6 +89,7 @@ page 58709 "Blanket SO Lines API PTE"
     end;
 
     var
+        DocumentId: Guid;
         RemainingQuantity: Decimal;
         RemainingQuantityBase: Decimal;
 }

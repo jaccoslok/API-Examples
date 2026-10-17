@@ -299,6 +299,14 @@ page 58708 "Sales Order Lines API PTE"
                         RegisterFieldSet(Rec.FieldNo("Variant Code"));
                     end;
                 }
+                field(variantCode; Rec."Variant Code")
+                {
+
+                    trigger OnValidate()
+                    begin
+                        RegisterFieldSet(Rec.FieldNo("Variant Code"));
+                    end;
+                }
                 field(locationId; Rec."Location Id")
                 {
 

@@ -30,7 +30,7 @@ page 58702 "Blanket Sales Orders API PTE"
                 field(orderDate; Rec."Order Date") { }
                 field(documentDate; Rec."Document Date") { }
                 field(postingDate; Rec."Posting Date") { }
-                field(sellToCustomerNumber; Rec."Sell-to Customer No.") { }
+                field(customerNumber; Rec."Sell-to Customer No.") { } //Mandatory, without customerNumber the portal will not work
                 field(sellToCustomerName; Rec."Sell-to Customer Name") { }
                 field(sellToContact; Rec."Sell-to Contact") { }
                 field(sellToAddressLine1; Rec."Sell-to Address") { }
